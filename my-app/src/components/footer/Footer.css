@@ -1,0 +1,66 @@
+.footer {
+    background-color: #f8f9fa;
+    color: #333;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+.footer h5 {
+    color: #2c3e50;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: #2c3e50;
+    text-decoration: underline;
+}
+
+.social-links a {
+    color: #666;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #2c3e50;
+}
+
+.footer hr {
+    margin: 1.5rem 0;
+    border-color: #dee2e6;
+}
+
+/* Dark mode styles */
+[data-theme="dark"] .footer {
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+[data-theme="dark"] .footer h5 {
+    color: #fff;
+}
+
+[data-theme="dark"] .footer ul li a,
+[data-theme="dark"] .social-links a {
+    color: #ccc;
+}
+
+[data-theme="dark"] .footer ul li a:hover,
+[data-theme="dark"] .social-links a:hover {
+    color: #fff;
+}
+
+[data-theme="dark"] .footer hr {
+    border-color: #4a5568;
+} 
