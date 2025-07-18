@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/auth/Login';
@@ -7,11 +7,12 @@ import Carousel from './components/Carousel';
 import Categories from './components/categories/Categories';
 import Explore from './components/explore/Explore';
 import Footer from './components/footer/Footer';
-import MainContainer from './components/main-container/MainContainer';
-import Navbar from './components/navbar/Navbar';
+import MainContainer from './components/MainContainer';
+import Navbar from './components/Navbar';
 import QuizList from './components/quiz/QuizList';
 import QuizResult from './components/quiz/QuizResult';
 import QuizTaker from './components/quiz/QuizTaker';
+import VoiceAssistant from './components/assistant/VoiceAssistant';
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -88,6 +89,7 @@ function App() {
             <Route path="/quizzes" element={<QuizList />} />
             <Route path="/quiz/:quizId" element={<QuizTaker />} />
             <Route path="/quiz-result" element={<QuizResult />} />
+            <Route path="/assistant" element={<VoiceAssistant />} />
           </Routes>
         </main>
 

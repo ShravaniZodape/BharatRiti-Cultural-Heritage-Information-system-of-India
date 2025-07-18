@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function QuizList() {
   const [quizzes, setQuizzes] = useState([]);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
   const [userStats, setUserStats] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -41,6 +42,7 @@ function QuizList() {
       if (response.ok) {
         const data = await response.json();
         setUserStats(data);
+        setUserLoggedIn(true); 
       }
     } catch (error) {
       console.error('Error fetching user stats:', error);
@@ -285,10 +287,11 @@ function QuizList() {
                 </div>
                 <button
                   className="btn btn-primary w-100"
-                  onClick={() => navigate(`/quiz/${quiz.id}`)}
+                  onClick={() => userLoggedIn ? navigate(`/quiz/${quiz.id}`) : alert('Please login to attempt the quiz.')}
+                  disabled={!userLoggedIn}
                 >
                   <i className="bi bi-play-circle me-2"></i>
-                  Start Quiz
+                  {userLoggedIn ? 'Start Quiz' : 'Login to Start'}
                 </button>
               </div>
             </div>
